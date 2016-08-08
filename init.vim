@@ -1,1 +1,1 @@
-/home/tonystark/.vimrc
+.vimrc
