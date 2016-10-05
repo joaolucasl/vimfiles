@@ -51,8 +51,6 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'digitaltoad/vim-pug', { 'for': 'jade' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
-" Colour Schemes
-Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -62,6 +60,3 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-set background=dark
-autocmd BufEnter * colorscheme solarized
-colorscheme solarized
