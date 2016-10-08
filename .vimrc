@@ -18,6 +18,7 @@ set lazyredraw
 set showmatch
 set tabstop=2 shiftwidth=2 expandtab " Indenting 2 spaces as default
 set ww+=<,> " Move to end of last line/start of next when reaches last column 
+
 let g:deoplete#enable_at_startup=1
 
 nnoremap <leader>ev :edit ~/.vimrc<cr>
@@ -41,9 +42,10 @@ function! DoRemote(arg)
 endfunction
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Language Plugins 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -51,9 +53,16 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'digitaltoad/vim-pug', { 'for': 'jade' }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
-
 call plug#end()
 
+" ~ AIRLINE ~
+let g:airline_powerline_fonts = 1
+let g:airline_inactive_collapse = 1
+let g:airline#extensions#branch#displayed_head_limit = 15
+let g:airline#extensions#default#section_truncate_width = {}
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='powerlineish'
 colorscheme molokai
 
 " Switch syntax highlighting on, when the terminal has colors
