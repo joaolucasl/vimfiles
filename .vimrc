@@ -49,6 +49,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Completion
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'thalesmello/pagarme-refactor.vim'
+Plug 'sgur/vim-textobj-parameter'
+Plug 'kana/vim-textobj-user'
 
 " Productivity Plugins
 Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate'
