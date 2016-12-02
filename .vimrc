@@ -45,6 +45,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-syntastic/syntastic'
 
 " Completion
 Plug 'zchee/deoplete-go', { 'do': 'make' }
@@ -55,6 +56,8 @@ Plug 'kana/vim-textobj-user'
 
 " Productivity Plugins
 Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate'
+Plug 'rking/ag.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Language Plugins 
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -66,15 +69,15 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust'}
 Plug 'elixir-lang/vim-elixir', {'for': 'elixir'}
 Plug 'fatih/vim-go', {'for': 'go'} 
 
-
-
-
-
 call plug#end()
 
 " ~ DEOPLETE ~
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#use_cache = 1
+
+" ~ SYNTASTIC 
+let g:syntastic_javascript_checkers = ['standard']
+
 
 " ~ AIRLINE ~
 let g:airline_powerline_fonts = 1
@@ -85,6 +88,12 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='powerlineish'
 colorscheme molokai
+
+" Tags
+if exists('g:plugs["vim-gutentags"]')
+  let g:gutentags_exclude = ['node_modules']
+  let g:gutentags_cache_dir = "/tmp"
+endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
